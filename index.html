@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravneheim Softworks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="fonts/norse.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/norse-bold.otf" as="font" type="font/otf" crossorigin>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Ravneheim Softworks Logo" class="logo">
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="hero" class="container">
+            <h1>Ravneheim Softworks</h1>
+            <p>Crafting digital solutions with Nordic precision</p>
+        </section>
+        
+        <hr class="runic-divider">
+        
+        <section id="products" class="container nordic-frame">
+            <h2 class="norse-header">Our Products</h2>
+            <div class="product-grid">
+                <!-- Product items will go here -->
+            </div>
+        </section>
+
+        <hr class="runic-divider">
+
+        <section id="about" class="container nordic-frame">
+            <h2 class="norse-header">About Ravneheim</h2>
+            <p>Ravneheim Softworks is a cutting-edge software development company inspired by Nordic mythology and precision. We craft digital solutions that are as robust and enduring as the ancient Norse legends.</p>
+        </section>
+
+        <hr class="runic-divider">
+
+        <section id="contact" class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

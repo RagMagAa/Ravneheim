@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'Norse';
+    src: url('fonts/norse.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Norse';
+    src: url('fonts/norse-bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --charcoal: #1a1a1a;
+    --gold: #ffd700;
+    --light-gold: #fff2ac;
+    --off-white: #e0e0e0;
+    --dark-gray: #333333;
+}
+
+body {
+    background-color: var(--charcoal);
+    color: var(--off-white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, .norse-header {
+    font-family: 'Norse', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--gold);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: var(--light-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--gold);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+#contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid var(--dark-gray);
+    background-color: var(--charcoal);
+    color: var(--off-white);
+}
+
+#contact-form textarea {
+    height: 150px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--charcoal);
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--light-gold);
+}
+
+.runic-divider {
+    border: none;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 2rem 0;
+    position: relative;
+}
+
+.runic-divider::before {
+    content: "ᛟ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--charcoal);
+    padding: 0 10px;
+    color: var(--gold);
+    font-size: 1.5rem;
+}
+
+.nordic-frame {
+    position: relative;
+    padding: 20px;
+}
+
+.nordic-frame::before,
+.nordic-frame::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--gold);
+}
+
+.nordic-frame::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.nordic-frame::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.norse-header {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.norse-header::before,
+.norse-header::after {
+    content: "x";
+    color: var(--gold);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.norse-header::before {
+    left: -10px;
+}
+
+.norse-header::after {
+    right: -10px;
+}
