@@ -1,0 +1,37 @@
+Create a new repository:
+a. Go to GitHub.com and log in.
+b. Click the "+" icon in the top right corner and select "New repository".
+c. Name your repository (e.g., "ravneheim-softworks-website").
+d. Choose "Public" or "Private" (public is fine for a website).
+e. Don't initialize with a README, .gitignore, or license for now.
+f. Click "Create repository".
+Set up Git on your local machine (if not already done):
+a. Download and install Git from https://git-scm.com/downloads
+b. Open a terminal or command prompt.
+c. Set your Git username: git config --global user.name "Your Name"
+d. Set your Git email: git config --global user.email "your_email@example.com"
+Prepare your local project:
+a. Create a new folder for your project if you haven't already.
+b. Move all your website files (HTML, CSS, JS, images, fonts) into this folder.
+Initialize the local repository:
+a. Open a terminal or command prompt.
+b. Navigate to your project folder: cd path/to/your/project
+c. Initialize the repository: git init
+Add your files to the repository:
+a. Add all files: git add .
+b. Commit the files: git commit -m "Initial commit"
+Link your local repository to GitHub:
+a. On the GitHub page for your new repository, copy the URL (HTTPS or SSH).
+b. In your terminal, run: git remote add origin URL_YOU_COPIED
+c. Push your files to GitHub: git push -u origin main
+(If you're on an older Git version, you might need to use master instead of main)
+Verify:
+a. Refresh your GitHub repository page.
+b. You should see all your files listed.
+
+Now your files are on GitHub. To make changes in the future:
+
+Make changes to your local files.
+Stage changes: git add .
+Commit changes: git commit -m "Describe your changes"
+Push to GitHub: git push

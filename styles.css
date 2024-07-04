@@ -55,6 +55,11 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+}
+
 a {
     color: var(--light-gold);
     text-decoration: none;
