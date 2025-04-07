@@ -28,37 +28,36 @@ document.addEventListener('DOMContentLoaded', function() {
             if (side === 0) { // Top
                 this.x = Math.random() * canvas.width;
                 this.y = 0;
+                // Force vertical movement downward
+                this.vx = 0;
+                this.vy = 1 + Math.random() * 2;
             } else if (side === 1) { // Right
                 this.x = canvas.width;
                 this.y = Math.random() * canvas.height;
+                // Force horizontal movement leftward
+                this.vx = -(1 + Math.random() * 2);
+                this.vy = 0;
             } else if (side === 2) { // Bottom
                 this.x = Math.random() * canvas.width;
                 this.y = canvas.height;
+                // Force vertical movement upward
+                this.vx = 0;
+                this.vy = -(1 + Math.random() * 2);
             } else { // Left
                 this.x = 0;
                 this.y = Math.random() * canvas.height;
+                // Force horizontal movement rightward
+                this.vx = 1 + Math.random() * 2;
+                this.vy = 0;
             }
             
-            // Calculate direction (moving away from the edge)
-            let angle;
-            if (side === 0) angle = Math.PI / 2;
-            else if (side === 1) angle = Math.PI;
-            else if (side === 2) angle = 3 * Math.PI / 2;
-            else angle = 0;
-            
-            // Add some randomness to the angle
-            angle += (Math.random() - 0.5) * Math.PI / 4;
-            
-            this.vx = Math.cos(angle) * (1 + Math.random() * 2);
-            this.vy = Math.sin(angle) * (1 + Math.random() * 2);
-            
-            this.width = 2 + Math.random() * 3;
-            this.length = 100 + Math.random() * 150;
+            this.width = 2 + Math.random() * 2; // Slightly thinner trails
+            this.length = 150 + Math.random() * 250; // Longer trails
             this.color = trailColors[Math.floor(Math.random() * trailColors.length)];
-            this.alpha = 0.2 + Math.random() * 0.4;
+            this.alpha = 0.3 + Math.random() * 0.5; // Slightly higher alpha
             this.history = [];
             this.active = true;
-            this.lifeTime = 200 + Math.random() * 300;
+            this.lifeTime = 300 + Math.random() * 400; // Longer lifetime
             this.age = 0;
         }
         
@@ -85,28 +84,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Check if out of bounds
             if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-                // 30% chance to bounce, 70% chance to reset
-                if (Math.random() < 0.3) {
-                    // Bounce
-                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-                    
-                    // Keep in bounds
-                    this.x = Math.max(0, Math.min(this.x, canvas.width));
-                    this.y = Math.max(0, Math.min(this.y, canvas.height));
-                } else {
-                    this.active = false;
-                }
+                this.active = false; // Always reset when hitting edge
             }
             
-            // Random direction change occasionally
-            if (Math.random() < 0.01) {
-                const angle = Math.atan2(this.vy, this.vx);
-                const newAngle = angle + (Math.random() - 0.5) * Math.PI / 4;
-                const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-                this.vx = Math.cos(newAngle) * speed;
-                this.vy = Math.sin(newAngle) * speed;
-            }
+            // No random direction changes - we want straight lines only
         }
         
         draw() {
@@ -146,8 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function animate() {
-        // Clear canvas with slight opacity to create fade effect
-        ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
+        // Clear canvas completely on each frame to remove "trail of trails" effect
+        ctx.fillStyle = '#0a0a0a'; // Solid black background
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
         // Update and draw all trails
