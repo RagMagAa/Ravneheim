@@ -1,0 +1,27 @@
+Commit and Push to GitHub
+Once you've set up all the files, you can commit and push them to your GitHub repository. Here's how to do it using VS Code:
+
+1 - Initialize Git (if not already done):
+
+Open a terminal in VS Code: View → Terminal or press Ctrl+`
+Run: git init
+
+
+2 - Connect to your GitHub repository:
+
+Run: git remote add origin https://github.com/RagMagAa/Ravneheim.git
+
+
+3 - Add all files to staging:
+
+Run: git add .
+
+
+4 - Commit your changes:
+
+Run: git commit -m "Initial website setup with homepage and IMU page"
+
+
+5 - Push to GitHub:
+
+Run: git push -u origin main (or git push -u origin master depending on your default branch)
