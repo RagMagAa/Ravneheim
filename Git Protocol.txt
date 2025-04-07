@@ -25,3 +25,26 @@ Run: git commit -m "Initial website setup with homepage and IMU page"
 5 - Push to GitHub:
 
 Run: git push -u origin main (or git push -u origin master depending on your default branch)
+
+
+
+----------
+
+(git init)
+
+For future updates, you won't need to go through all the initial setup steps again. Here's the simplified workflow for making updates:
+
+Make your changes locally in VSCode to whichever files need updating
+Add the changed files to staging:
+git add .
+
+(This adds all changed files, or you can specify individual files like git add index.html css/style.css)
+Commit your changes with a descriptive message:
+git commit -m "Description of what you changed"
+
+Push to GitHub:
+git push
+
+That's it! Since Netlify is already connected to your GitHub repository, it will automatically detect the new commit and rebuild your site with the changes. You don't need to manually deploy to Netlify again.
+If you want to check the deployment status, you can log into your Netlify account and view the deployment history for your site.
+For more complex changes in the future, such as adding new pages or features, just follow these same steps after making your modifications.
