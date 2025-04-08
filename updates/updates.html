@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravneheim - Updates</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="updates-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="binary-canvas" class="background-canvas"></canvas>
+    <div class="particles-container" id="particles-js" style="display: none;"></div>
+    
+    <header>
+        <div class="logo-container">
+            <img src="../images/logo.png" alt="Ravneheim Logo" class="logo">
+        </div>
+        <nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../imu/index.html">IMU</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="updates.html">Updates</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero updates-hero">
+            <div class="hero-content">
+                <h1><span class="gold-text">Updates</span></h1>
+                <p class="hero-description">Latest updates and patches for Ravneheim applications</p>
+                <p class="updates-subtitle">Keeping your tools at the cutting edge</p>
+                <a href="#updates" class="cta-button">View Updates</a>
+            </div>
+        </section>
+
+        <section id="updates" class="updates-section">
+            <h2>Application <span class="gold-text">Updates</span></h2>
+            
+            <div class="app-selector">
+                <!-- IMU App Card -->
+                <div class="app-card">
+                    <div class="app-header" id="imu-toggle">
+                        <div class="app-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="app-title">IMU</div>
+                        <div style="flex-grow: 1;"></div>
+                        <div class="toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="app-description">
+                        <p>Image Management Utility - Our flagship image processing and management application.</p>
+                    </div>
+                    
+                    <div class="update-list" id="imu-updates">
+                        <!-- Update Item Example (Once you have actual updates, replace these examples) -->
+                        <div class="update-item">
+                            <div class="update-header">
+                                <div class="update-version">Version 0.9.9</div>
+                                <div class="update-date">April 5, 2025</div>
+                            </div>
+                            <div class="update-description">
+                                <p>Last test version before release.</p>
+                                <ul>
+                                    <li>Additional image adjustment methods</li>
+                                    <li>Fixed last-minute bugs found</li>
+                                    <li>Added support for multi-file renaming with control</li>
+                                </ul>
+                            </div>
+                            <a href="#" class="update-link">/-Retired Patch-/</a>
+                        </div>
+                        
+                        <div class="update-item">
+                            <div class="update-header">
+                                <div class="update-version">Version 0.9.3</div>
+                                <div class="update-date">March 12, 2025</div>
+                            </div>
+                            <div class="update-description">
+                                <p>Test version first full stable build.</p>
+                                <ul>
+                                    <li>Fixed tag search functionality</li>
+                                    <li>Improved export options</li>
+                                    <li>Several UI refinements</li>
+                                </ul>
+                            </div>
+                            <a href="#" class="update-link">/-Retired Patch-/</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add more application cards here as they are developed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ravneheim</h3>
+                <p>To Valhall we ride</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../imu/index.html">IMU</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="updates.html">Updates</a></li>
+                </ul>
+            </div>
+            <div class="footer-section" id="contact">
+                <h3>Contact</h3>
+                <p>Email: ragmagaa@outlook.com</p>           
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ravneheim. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/binary-rain.js"></script>
+    <script>
+        // Toggle updates list
+        document.addEventListener('DOMContentLoaded', function() {
+            const imuToggle = document.getElementById('imu-toggle');
+            const imuUpdates = document.getElementById('imu-updates');
+            const toggleIcon = document.querySelector('.toggle-icon');
+            
+            imuToggle.addEventListener('click', function() {
+                imuUpdates.classList.toggle('active');
+                toggleIcon.classList.toggle('active');
+            });
+            
+            // Automatically open the updates list on page load
+            imuUpdates.classList.add('active');
+            toggleIcon.classList.add('active');
+            
+            // Mobile menu
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
